@@ -17,7 +17,7 @@ body {
 .item:hover {
     box-shadow: 0 0 1em #aaa;
 }
-
+<
 .item.completed {
     text-decoration: line-through;
 }
@@ -65,4 +65,26 @@ button:focus {
 
 /* weather*/
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    padding: 2em;
+    border-radius: 14px;
+    text-align: center; /* Center text horizontally */
+    font-size: 1.5em; /* Increase font size as desired */
+}
+
+.displayWeather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em; /* Increase font size for the weather information */
+}
 
