@@ -1,5 +1,3 @@
-
-
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
@@ -179,45 +177,3 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// Wrap every letter in a span
-var textWrapper = document.querySelector('.ml6 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml6 .letter',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml6',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-
-//accessing all the html component required to perform actions
-let button1 = document.querySelector('.button1')
-let inputvalue = document.querySelector('.inputvalue')
-let name1 = document.querySelector('.name1')
-let temp = document.querySelector('.temp')
-let desc = document.querySelector('.desc')
-
-//adding event listener to search button
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputvalue.value}&units=metric&appid=108dd9a67c96f23039937fe6f3c91963`)
-    .then(response => response.json())
-    .then(
-        displayData)
-    .catch(err => alert('Wrong City name')); 
-
-})
-//function to display
-const displayData=(weather)=>{
-    temp.innerText=`${weather.main.temp}°C`
-    desc.innerText=`${weather.weather[0].main}`
-}
-
