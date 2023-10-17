@@ -1,5 +1,3 @@
-
-
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
@@ -179,6 +177,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+<<<<<<< HEAD
 
 // Wrap every letter in a span
 var textWrapper = document.querySelector('.ml6 .letters');
@@ -221,3 +220,5 @@ const displayData=(weather)=>{
     desc.innerText=`${weather.weather[0].main}`
 }
 
+=======
+>>>>>>> 5b07dc122436f3e5acbfafa294ad04d8efaf7f7c

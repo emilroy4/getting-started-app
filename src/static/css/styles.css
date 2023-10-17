@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
 background-color: #8dc6ff;    
 font-family: 'Lato', sans-serif;
 justify-content: center;
@@ -7,6 +8,11 @@ height: 100vh;
 margin: 0;
 
 
+=======
+    background-color: #8dc6ff;
+    margin-top: 50px;
+    font-family: 'Lato', sans-serif;
+>>>>>>> 5b07dc122436f3e5acbfafa294ad04d8efaf7f7c
 }
 
 .item {
@@ -42,6 +48,7 @@ margin: 0;
 button:focus {
     border: 1px solid #333;
 }
+<<<<<<< HEAD
 
 ml6 {
   position: relative;
@@ -116,3 +123,5 @@ button1.button1:hover{
 	font-family:'Lato', sans-serif;
 }
 
+=======
+>>>>>>> 5b07dc122436f3e5acbfafa294ad04d8efaf7f7c
