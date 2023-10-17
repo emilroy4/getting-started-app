@@ -198,3 +198,26 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
+
+//accessing all the html component required to perform actions
+let button1 = document.querySelector('.button1')
+let inputvalue = document.querySelector('.inputvalue')
+let name1 = document.querySelector('.name1')
+let temp = document.querySelector('.temp')
+let desc = document.querySelector('.desc')
+
+//adding event listener to search button
+button1.addEventListener('click', function(){
+	//Fetch data from api
+	fetch('https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=e32cac0d7841173d064cf59b12aadebd')
+	.then(response => response.json())
+	.then(
+		displayData)
+	.catch(err => alert('Wrong city name'));
+})
+//function to display
+const displayData=(weather)=>{
+	temp.innerText=`${weather.main.temp}*C`
+	desc.innerText=`${weather.weather[0].main}`
+}
+

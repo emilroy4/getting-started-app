@@ -1,7 +1,12 @@
 body {
     background-color: #8dc6ff;
-    margin-top: 50px;
+    
     font-family: 'Lato', sans-serif;
+justify-content: center;
+height:100vh;
+margin: 0;
+
+
 }
 
 .item {
@@ -56,4 +61,27 @@ ml6 {
 .ml6 .letter {
   display: inline-block;
   line-height: 1em;
+}
+
+.container {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	width: 100%;
+	max-width: 420px;
+	margin: 1em;
+	padding: 2em;
+	border-radius: 14px;
+	background: rgb(234 234 234);
+	background: #000000d0;
+	color:white;
+}
+
+.diplayWeather{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	font-family:'Lato', sans-serif;
 }
