@@ -43,6 +43,7 @@ button:focus {
   position: relative;
   font-weight: 900;
   font-size: 3.3em;
+    text-align: center;
 }
 
 .ml6 .text-wrapper {
