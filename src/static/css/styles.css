@@ -74,9 +74,7 @@ button:focus {
     margin: 1em;
     padding: 2em;
     border-radius: 14px;
-    background: rgb(234 234 234);
-    background: #000000d0;
-    color: white;
+
 }
 
 .displayWeather{
