@@ -133,6 +133,7 @@ button:focus {
 .ml14 {
   font-weight: 200;
   font-size: 3.2em;
+    text-align: center;
 }
 
 .ml14 .text-wrapper {
