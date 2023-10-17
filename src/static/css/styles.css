@@ -1,5 +1,4 @@
 body {
-display:flex;
 background-color: #8dc6ff;    
 font-family: 'Lato', sans-serif;
 justify-content: center;
@@ -76,7 +75,7 @@ ml6 {
 }
 
 .container {
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -116,3 +115,4 @@ button1.button1:hover{
 	align-items:center;
 	font-family:'Lato', sans-serif;
 }
+

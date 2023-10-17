@@ -208,7 +208,7 @@ let desc = document.querySelector('.desc')
 
 //adding event listener to search button
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputvalue.value}&units=metric&appid=108dd9a67c96f23039937fe6f3c91963`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputvalue.value}&units=metric&appid=e32cac0d7841173d064cf59b12aadebd`)
     .then(response => response.json())
     .then(
         displayData)
