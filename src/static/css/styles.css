@@ -64,6 +64,23 @@ button:focus {
 }
 
 /* weather*/
+/* Style for the weather-related elements to make them more central */
+
+/* Center the container horizontally and vertically */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    padding: 2em;
+    border-radius: 14px;
+    text-align: center; /* Center text horizontally */
+}
+
+/* Input field for the location */
 .container .input .inputValue {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -83,7 +100,6 @@ button:focus {
     transition: background-color 0.3s ease-in-out;
 }
 
-
 .container .input .button:focus {
     outline: none;
 }
@@ -101,3 +117,4 @@ button:focus {
 .container .displayWeather .desc {
     font-size: 1.5em; /* Adjust font size for weather description */
 }
+
