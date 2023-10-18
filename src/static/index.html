@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/font-awesome/all.min.css" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" /> <!-- Add this line to include your custom CSS -->
-    <title>Todo App</title>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/font-awesome/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" /> <!-- Add this line to include your custom CSS -->
+  <title>Todo App</title>
 </head>
+
 <body>
 
-    <!--title -->
-    <div id="title">
-<h1 class="ml6">
-  <span class="text-wrapper">
-    <span class="letters">ToDo app</span>
-  </span>
-</h1>
+  <!--title -->
+  <div id="title">
+    <h1 class="ml6">
+      <span class="text-wrapper">
+        <span class="letters">ToDo app</span>
+      </span>
+    </h1>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
+  </div>
+  <!-- TO DO -->
+  <div id="root"></div>
+
+  <br>
+  <br>
+
+  <!--weather title-->
+  <h1 class="ml14">
+    <span class="text-wrapper">
+      <span class="letters">Lets check the weather</span>
+      <span class="line"></span>
+    </span>
+  </h1>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <br>
+  <br>
+  <!--WEATHER-->
+
+  <div class="container" style="width:fit-content;">
+    <div class="input"> 
+      <input type="text " class="inputValue" placeholder="Enter Location">
+      <button class="button"><i class="fas fa-search"></i></button>
     </div>
-    <!-- TO DO -->
-    <div id="root"></div>
 
-    <br>
-    <br>
+    <div class="displayWeather">
+      <h1 class="temp">----°C</h1>
+      <p class="desc">---</p>
+    </div>
 
-    <!--weather title-->
-<h1 class="ml14">
-  <span class="text-wrapper">
-    <span class="letters">Lets check the weather</span>
-    <span class="line"></span>
-  </span>
-</h1>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-    <br>
-    <br>
-    <!--WEATHER-->
-    
-<div class="container">
-        <div class="input">
-            <input type="text " class="inputValue" placeholder="Enter Location">
-            <button class="button"><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="displayWeather">
-            <h1 class="temp">----°C</h1>
-            <p class="desc">---</p>
-        </div>
-
-    </div>    
-    
-    <script src="js/react.production.min.js"></script>
-    <script src="js/react-dom.production.min.js"></script>
-    <script src="js/react-bootstrap.js"></script>
-    <script src="js/babel.min.js"></script>
-    <script type="text/babel" src="js/app.js"></script>
+  <script src="js/react.production.min.js"></script>
+  <script src="js/react-dom.production.min.js"></script>
+  <script src="js/react-bootstrap.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel" src="js/app.js"></script>
 </body>
+
 </html>
