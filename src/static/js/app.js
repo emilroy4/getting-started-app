@@ -1,18 +1,13 @@
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
-        <div>
-            <div className="banner">
-                <h1>MY TO DO LIST</h1>
-            </div>
-            <Container>
-                <Row>
-                    <Col md={{ offset: 3, span: 6 }}>
-                        <TodoListCard />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+        <Container>
+            <Row>
+                <Col md={{ offset: 3, span: 6 }}>
+                    <TodoListCard />
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
@@ -52,32 +47,13 @@ function TodoListCard() {
         [items],
     );
 
-    const onDeleteAllItems = () => {
-        fetch('/items', {
-            method: 'DELETE'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                setItems([]);
-            } else {
-                console.error('Failed to delete all items');
-            }
-        })
-        .catch(error => {
-            console.error('Network error:', error);
-        });
-    };
-    
-
     if (items === null) return 'Loading...';
 
     return (
-        <React.Fragment> 
+        <React.Fragment>
             <AddItemForm onNewItem={onNewItem} />
-            <button class = "deleteAll" onClick={onDeleteAllItems} disabled>Delete All Items</button>
             {items.length === 0 && (
-                <p className="NoItems">No items yet! Add one above!</p>
+                <p className="text-center">No items yet! Add one above!</p>
             )}
             {items.map(item => (
                 <ItemDisplay
@@ -122,7 +98,6 @@ function AddItemForm({ onNewItem }) {
                     type="text"
                     placeholder="New Item"
                     aria-describedby="basic-addon1"
-                    disabled
                 />
                 <InputGroup.Append>
                     <Button
@@ -130,9 +105,8 @@ function AddItemForm({ onNewItem }) {
                         variant="success"
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
-                        disabled
                     >
-                        {submitting ? 'Adding...' : 'Add Item'}
+                        {submitting ? 'Adding...' : 'Add'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
@@ -141,9 +115,7 @@ function AddItemForm({ onNewItem }) {
 }
 
 function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
-    const { Container, Row, Col, Button, Form } = ReactBootstrap;
-    const [editing, setEditing] = React.useState(false);
-    const [editedName, setEditedName] = React.useState(item.name);
+    const { Container, Row, Col, Button } = ReactBootstrap;
 
     const toggleCompletion = () => {
         fetch(`/items/${item.id}`, {
@@ -164,26 +136,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
         );
     };
 
-    const editItem = () => {
-        setEditing(true);
-    };
-
-    const saveEdit = () => {
-        fetch(`/items/${item.id}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-                name: editedName,
-                completed: item.completed,
-            }),
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(r => r.json())
-            .then(updatedItem => {
-                onItemUpdate(updatedItem);
-                setEditing(false);
-            });
-    };
-
     return (
         <Container fluid className={`item ${item.completed && 'completed'}`}>
             <Row>
@@ -193,7 +145,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         size="sm"
                         variant="link"
                         onClick={toggleCompletion}
-			disabled
                         aria-label={
                             item.completed
                                 ? 'Mark item as incomplete'
@@ -207,25 +158,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         />
                     </Button>
                 </Col>
-                <Col xs={10} className={`name ${editing ? 'editing' : ''}`}>
-                    {editing ? (
-                        <React.Fragment>
-                            <Form.Control
-                                type="text"
-                                value={editedName}
-                                onChange={e => setEditedName(e.target.value)}
-                            />
-                            <Button
-                                size="sm"
-                                variant="success"
-                                onClick={saveEdit}
-                            >
-                                Save
-                            </Button>
-                        </React.Fragment>
-                    ) : (
-                        item.name
-                    )}
+                <Col xs={10} className="name">
+                    {item.name}
                 </Col>
                 <Col xs={1} className="text-center remove">
                     <Button
@@ -233,18 +167,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         variant="link"
                         onClick={removeItem}
                         aria-label="Remove Item"
-                        disabled 
                     >
                         <i className="fa fa-trash text-danger" />
-                    </Button>
-                    <Button
-                        size="sm"
-                        variant="link"
-                        onClick={editItem}
-                        aria-label="Edit Item"
-                        disabled
-                    >
-                        <i className="fa fa-edit" />
                     </Button>
                 </Col>
             </Row>
@@ -331,5 +255,4 @@ const displayData=(weather)=>{
     desc.innerText=`${weather.weather[0].main}`
 
 }
-
 
