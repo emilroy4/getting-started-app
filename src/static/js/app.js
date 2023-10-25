@@ -98,13 +98,12 @@ function AddItemForm({ onNewItem }) {
                     type="text"
                     placeholder="New Item"
                     aria-describedby="basic-addon1"
-                    disabled={submitting} {/* Disable the input field while submitting */}
                 />
                 <InputGroup.Append>
                     <Button
                         type="submit"
                         variant="success"
-                        disabled={!newItem.length || submitting} {/* Disable the button if no input or submitting */}
+                        disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
                         {submitting ? 'Adding...' : 'Add'}
@@ -151,7 +150,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                                 ? 'Mark item as incomplete'
                                 : 'Mark item as complete'
                         }
-                        disabled={submitting} {/* Disable the button while submitting */}
                     >
                         <i
                             className={`far ${
@@ -169,7 +167,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         variant="link"
                         onClick={removeItem}
                         aria-label="Remove Item"
-                        disabled={submitting} {/* Disable the button while submitting */}
                     >
                         <i className="fa fa-trash text-danger" />
                     </Button>
@@ -180,7 +177,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
 
 //title
 // Wrap every letter in a span
@@ -259,4 +255,3 @@ const displayData=(weather)=>{
     desc.innerText=`${weather.weather[0].main}`
 
 }
-
